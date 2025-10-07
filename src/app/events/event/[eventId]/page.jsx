@@ -1,23 +1,19 @@
 
-import event_api from '@/app/events/api'
-
-async function getEvent(eventId) {
+async function getEvents(eventId) {
   const res = await fetch(`/events/api/event/${eventId}`);
-  const event = await res.json();
-  return event;
+  return await res.json();
 } 
 
-const EventItem = async ({pramas}) => {
-	// let res = await event_api[props.id];
-
+const EventItem = async ({params}) => {
   const eventId = await params.id;
-  const event = await getEvent(eventId);
+  const event = await getEvents(eventId);
   console.log(event);
 
   return (
-    <div>
-      {/* <h2>{event.title}</h2> */}
-      {/* <h2>Event Id is: {props.id}</h2> */}
+    <div className='pt-8'>
+      {/* <h3>{title}</h3>
+      <p>{author}</p> */}
+      <h2>Event Id is: {params.id}</h2>
     </div>
   )
 }

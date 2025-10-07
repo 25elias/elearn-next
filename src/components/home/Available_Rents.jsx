@@ -1,6 +1,6 @@
 
 
-const homeEvents = [
+const homeAvailables = [
     {title:"Felix", image:"/man_dp1.jpg"},
     {title:"Felix", image:"/man_dp2.jpg"},
     {title:"Felix", image:"man_dp3.jpg"},
@@ -9,19 +9,19 @@ const homeEvents = [
 ];
 
 
-export default function Events() {
+export default function Availables() {
   return (
     <div className="wrapper py-24 w-full h-full space-y-8">
        <Headlines />
 
        <div className=" py-8 px-10 flex flex-wrap justify-start gap-6" >
-          {homeEvents.map(({image, title}) => {
+          {homeAvailables.map(({image, title}) => {
             return(
-                    <div className="relative space-y-4">
-                        <div className="w-[280px] h-[380px] rounded-md">
+                    <div className="space-y-4">
+                        <div className="w-[220px] h-[380px] rounded-md">
                             <img className="w-full h-full rounded-md cover" src={image} alt={title} />
                         </div>
-                        <span className="absolute bottom-6 left-4 text-lg text-gray-200 font-semibold">{title}</span>
+                        <span className="text-lg text-gray-200 font-semibold">{title}</span>
                     </div>
             )
         })}
@@ -35,8 +35,8 @@ export default function Events() {
 export function Headlines(){
   return(
     <div>
-      <p className="uppercase text-xs text-gray-800 text-center">Next-Level vacation properties awaits you</p>
-      <p className="text-2xl text-gray-900 tracking-wide capitalize text-center mb-8 mt-4">What to Expect From Our Properties</p>
+      <p className="uppercase text-xs text-gray-800 text-center">Variety of properties available for rent</p>
+      <p className="text-2xl text-gray-900 tracking-wide capitalize text-center mb-8 mt-4">What type of properties to rent</p>
     </div>
   );
 };

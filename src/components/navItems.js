@@ -1,13 +1,9 @@
-
-
-
 export default [
-
-
     {title: "Home", path: "/"},
-    {title: "About Us", path: "/about"},
-    {title: "Courses", path: "/courses"},
-    {title: "Events", path: "/events"},
-    {title: "Q&A", path: "/faq"},
+    {title: "Rentals", path: "/rentals"},
+    {title: "Blog", path: "/blog"},
+    {title: "About", path: "/about"},
+    {title: "FAQ", path: "/faq"},
     {title: "Contact", path: "/contact"},
+    {title: "Demos", path: "/demos"},
 ];

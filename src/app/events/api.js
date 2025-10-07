@@ -1,4 +1,4 @@
-let api = async () =>  [
+export default [
       {
         "id": "10",
         "title": "Pantherbook: Is The Future of High School",
@@ -17,4 +17,3 @@ let api = async () =>  [
       },
 ];
 
-export default api;

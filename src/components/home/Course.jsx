@@ -1,26 +1,35 @@
 import Link from "next/link";
+import { FaStar } from "react-icons/fa6";
+import { FaRegHeart } from "react-icons/fa6";
 
-export default function Course({courses}) {
+
+export default function Course({house}) {
     return(
-        <div className="flex flex-col md:flex-row gap-5 ">
-            {courses.map(({title, image, content, year, credit, path}) => {
-                return(
-                    <div key={path} className="bg-gray-100">
-                        <div className="w-full h-full md:h-[260px]">
-                            <img className="w-full h-full cover" src={image} alt={title} />
+            <div className="flex">
+                <div className="bg-gray-100 py-2">
+                    <div className="relative w-[280px] max-h-[200px] rounded-md">
+                        <div className="absolute top-4 right-4 text-xs text-white py-1 rounded px-3 bg-gray-400">verified</div>
+                        <div className="w-[280px] h-[220px]">
+                            <img className="w-full h-full rounded-md overflow-hidden" src={house.image} alt={house.title} />
                         </div>
-                        <div className="space-y-2">
-                            <Link href={path}><h3  className="p-4 hover:underline">{title}</h3></Link>
-                            <p className="px-4 content border-b-2 border-gray-300 pb-3">{content}</p>
-                            <div className="px-15 pt-6 md-4 text-center">
-                                <p className="text-sm font-bold tracking-wide pb-3 border-b-2 border-gray-300">Year: {year}</p>
-                                <p className="text-sm font-bold tracking-wide py-3 text-center border-b-2 border-gray-300">Credit: {credit}</p>
+                        <div className="absolute bottom-[-4] left-4 right-4 flex items-center justify-between">
+                            <div className="w-10 h-10" >
+                                <img src="/girl_db3.jpg" alt="Owner"
+                                className="w-full h-full rounded-full cover border-2  border-white" />
                             </div>
-                            <Link href="/courses" className="btn-cta flex items-center justify-center mx-4 mt-8 mb-4"> Learn More</Link>
+                            <FaRegHeart className="w-5 h-5 text-gray-200" />
                         </div>
                     </div>
-                )
-            })}
-        </div>
+                    <div className="mt-4 py-2">
+                        <Link href={house.path} className="flex items-center justify-between pt-2">
+                            <h4 className="hover:underline">{house.title}</h4>
+                            <span className="flex gap-2 items-center"><FaStar className="w-4 h-4" /> 5.00</span>
+                        </Link>
+                        <p className="text-sm tracking-wide pt-1">{house.title}</p>
+                        <p className="text-sm tracking-wide py-2">{house.credit}</p>
+                        <p className="text-sm text-slate-500 tracking-wide">&euro; 600</p>
+                    </div>
+                </div>
+            </div>
     )
 }
